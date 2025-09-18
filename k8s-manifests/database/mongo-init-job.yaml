@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: mongo-init
+  namespace: database
+spec:
+  template:
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: mongo-init
+          image: mongo:6
+          command:
+            - mongosh
+            - --host
+            - "mongo-0.mongo-service.database.svc.cluster.local"
+            - --eval
+            - >
+              rs.initiate(
+                {
+                  _id: "rs0",
+                  members: [
+                    { _id: 0, host: "mongo-0.mongo-service.database.svc.cluster.local:27017" }
+                  ]
+                }
+              )
+
