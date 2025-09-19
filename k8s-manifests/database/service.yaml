@@ -5,7 +5,6 @@ metadata:
   name: mongo-service
   namespace: database
 spec:
-  clusterIP: None
   selector:
     app: mongo
   ports:

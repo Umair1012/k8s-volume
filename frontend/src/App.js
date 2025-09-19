@@ -5,7 +5,7 @@ import axios from 'axios';
 function App() {
   const [items, setItems] = useState([]);
   const [name, setName] = useState('');
-  const API_BASE_URL = 'http://3.95.180.212:5000/';
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://34.207.114.61:5000'
   const fetchItems = async () => {
     const res = await axios.get(`${API_BASE_URL}/api/items`);
     setItems(res.data);

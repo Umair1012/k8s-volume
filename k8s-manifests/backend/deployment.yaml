@@ -44,6 +44,9 @@ spec:
           timeoutSeconds: 5         # fail probe if no response in 5s
           failureThreshold: 3       # after 3 failures, mark pod not ready
 
-        env:
-        - name: MONGO_URI
-          value: "mongodb://mongo-0.mongo-service.database.svc.cluster.local:27017"
+        envFrom:
+          - secretRef:
+              name: mongo-secret
+          - configMapRef:
+              name: backend-config
+
