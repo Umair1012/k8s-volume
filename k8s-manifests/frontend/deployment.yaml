@@ -39,4 +39,7 @@ spec:
           periodSeconds: 10
         env:
             - name: BACKEND_IP_ADDRESS
-              value: "3.95.180.212"
+              valueFrom:
+                configMapKeyRef:
+                  name: backend-config
+                  key: REACT_APP_API_BASE_URL

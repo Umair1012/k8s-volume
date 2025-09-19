@@ -1,13 +1,13 @@
-# Headless Service for StatefulSet
 apiVersion: v1
 kind: Service
 metadata:
   name: mongo-service
   namespace: database
 spec:
+  clusterIP: None   # lowercase!
   selector:
     app: mongo
   ports:
-  - port: 27017
-    targetPort: 27017
+    - port: 27017
+      targetPort: 27017
 

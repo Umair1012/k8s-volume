@@ -9,3 +9,15 @@ Handling connection for 3000
 Handling connection for 3000
 error: unable to forward port because pod is not running. Current status=Pending
 Handling connection for 3000
+error: unknown flag: --addres
+See 'kubectl port-forward --help' for usage.
+Forwarding from 0.0.0.0:5000 -> 5000
+Handling connection for 5000
+Handling connection for 5000
+Forwarding from 0.0.0.0:3000 -> 3000
+Handling connection for 5000
+Handling connection for 5000
+Handling connection for 3000
+Handling connection for 3000
+Handling connection for 3000
+Handling connection for 5000
