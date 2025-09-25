@@ -30,7 +30,7 @@ spec:
           httpGet:
             path: /api/items
             port: 5000
-          initialDelaySeconds: 15   # wait before first probe after container starts
+          initialDelaySeconds: 30   # wait before first probe after container starts
           periodSeconds: 20         # check every 20s
           timeoutSeconds: 5         # fail probe if no response in 5s
           failureThreshold: 3       # after 3 failures, restart the container
@@ -39,7 +39,7 @@ spec:
           httpGet:
             path: /api/items
             port: 5000
-          initialDelaySeconds: 10   # wait before first probe
+          initialDelaySeconds: 30   # wait before first probe
           periodSeconds: 15         # check every 15s
           timeoutSeconds: 5         # fail probe if no response in 5s
           failureThreshold: 3       # after 3 failures, mark pod not ready
@@ -48,5 +48,5 @@ spec:
           - secretRef:
               name: mongo-secret
           - configMapRef:
-              name: backend-config
-
+              name: frontend-config
+        

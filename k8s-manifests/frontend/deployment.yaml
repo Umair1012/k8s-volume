@@ -41,5 +41,5 @@ spec:
             - name: BACKEND_IP_ADDRESS
               valueFrom:
                 configMapKeyRef:
-                  name: backend-config
-                  key: REACT_APP_API_BASE_URL
+                  name: frontend-config          # name of your ConfigMap
+                  key: REACT_APP_API_BASE_URL    # specific key in ConfigMap
